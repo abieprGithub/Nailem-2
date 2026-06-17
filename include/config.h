@@ -58,21 +58,30 @@
 #define __PIN_UART_RX        TBA
 
 // WiFi credentials
-constexpr char* wifi[4][2] = {
+constexpr char* WIFI_CREDENTIALS[5][2] = {
   {"HUAWEI-2.4G-ReY2", "12345678"},
+  {"abiepr-p1", "abcdefgh"},
   {"Techno_MTsLvl7_4G", "sifatmuhammad"},
   {"Techno_MTsLvl8_4G", "sifatmuhammad"},
   {"Techno_MTsLvl9_4G", "sifatmuhammad"}
 };
 
-// WiFi connection attempts
-constexpr uint8_t NUM_CONN_ATTEMPTS = 20;
-constexpr uint8_t NUM_PING_ATTEMPTS = 5;
+constexpr size_t NUM_WIFI_NETWORKS = sizeof(WIFI_CREDENTIALS) / sizeof(WIFI_CREDENTIALS[0]);
+
+// General functions
+#define CONFIG_USE_LCD
+#define CONFIG_USE_NEXTION
+#define CONFIG_SERIAL_DEBUG
 
 // WiFi connection config
 constexpr uint8_t CONFIG_WIFI_CONN_PRIORITY = 2;
 constexpr uint16_t CONFIG_WIFI_CONN_STACK_SIZE = 8192;
 constexpr bool CONFIG_WIFI_CONN_USE_CORE_0 = true; // Run on core 0 for better performance
+
+constexpr uint8_t NUM_CONN_ATTEMPTS = 20;
+constexpr uint8_t NUM_PING_ATTEMPTS = 5;
+constexpr uint16_t CONN_TIMEOUT_MS = 1000; // Timeout for WiFi connection attempts in milliseconds
+constexpr uint8_t PING_IP[4] = {8, 8, 8, 8}; // IP address to ping for internet connectivity check
 
 // WiFi service config
 constexpr uint8_t CONFIG_WIFI_SVC_PRIORITY = 1;

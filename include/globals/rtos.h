@@ -12,3 +12,5 @@
 #include <freertos/semphr.h>
 
 extern SemaphoreHandle_t xMutex;
+extern TaskHandle_t tTaskHandle_WIFI_CONN;
+extern TaskHandle_t tTaskHandle_WIFI_SVC;

@@ -17,6 +17,8 @@
 #include <Arduino.h>
 #include <freertos/FreeRTOS.h>
 #include "globals/rtos.h"
+#include "wireless/wifi_conn.h"
+#include "wireless/wifi_svc.h"
 #include "config.h"
 /* USER CODE END Includes */
 
@@ -48,6 +50,10 @@
 void setup() {
   /* USER CODE BEGIN Setup_Init */
   xMutex = xSemaphoreCreateMutex();
+  Serial.begin(115200);
+  Serial.println("Starting ESP32-S3 ...");
+  xStart_WIFI_CONN();
+  xStart_WIFI_SVC();
   /* USER CODE END Setup_Init */
 
   /* USER CODE BEGIN Setup */
@@ -60,7 +66,7 @@ void setup() {
   */
 void loop() {
   /* USER CODE BEGIN Loop */
-
+  vTaskDelay(pdMS_TO_TICKS(1000)); // Delay for 1 second
   /* USER CODE END Loop */
 
   /* USER CODE BEGIN Loop_End */

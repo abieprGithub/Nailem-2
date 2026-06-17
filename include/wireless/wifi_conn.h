@@ -11,3 +11,5 @@
 #include "config.h"
 
 void xTask_WIFI_CONN();
+
+void xStart_WIFI_CONN();
