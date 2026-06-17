@@ -1,10 +1,13 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : wifi_svc.cpp
-  * @brief          : Source file for WiFi monitor task.
+  * @file           : wifi_conn.h
+  * @brief          : Header file for WiFi connection oneshot task definition
   ******************************************************************************
 **/
 /* USER CODE END Header */
+
 #pragma once
-#include "wireless/wifi_svc.h"
+#include "config.h"
+
+void xTask_WIFI_CONN();

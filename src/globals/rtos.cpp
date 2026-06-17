@@ -1,10 +1,11 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : wifi_svc.cpp
-  * @brief          : Source file for WiFi monitor task.
+  * @file           : rtos.cpp
+  * @brief          : Source file for RTOS-related definitions and declarations
   ******************************************************************************
 **/
 /* USER CODE END Header */
-#pragma once
-#include "wireless/wifi_svc.h"
+#include "globals/rtos.h"
+
+SemaphoreHandle_t xMutex = nullptr; // Initialize the mutex handle to nullptr

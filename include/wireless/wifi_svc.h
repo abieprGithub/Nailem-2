@@ -1,10 +1,8 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : wifi_svc.cpp
-  * @brief          : Source file for WiFi monitor task.
+  * @file           : wifi_svc.h
+  * @brief          : Header file for WiFi service task definition
   ******************************************************************************
 **/
 /* USER CODE END Header */
-#pragma once
-#include "wireless/wifi_svc.h"

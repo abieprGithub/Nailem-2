@@ -1,10 +1,14 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : wifi_svc.cpp
-  * @brief          : Source file for WiFi monitor task.
+  * @file           : rtos.h
+  * @brief          : Header file for RTOS-related definitions and declarations
   ******************************************************************************
 **/
 /* USER CODE END Header */
+
 #pragma once
-#include "wireless/wifi_svc.h"
+#include <freertos/FreeRTOS.h>
+#include <freertos/semphr.h>
+
+extern SemaphoreHandle_t xMutex;
