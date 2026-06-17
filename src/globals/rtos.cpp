@@ -11,3 +11,4 @@
 SemaphoreHandle_t xMutex = nullptr; // Initialize the mutex handle to nullptr
 TaskHandle_t tTaskHandle_WIFI_CONN = nullptr;
 TaskHandle_t tTaskHandle_WIFI_SVC = nullptr;
+TaskHandle_t tTaskHandle_WIFI_NTP = nullptr;

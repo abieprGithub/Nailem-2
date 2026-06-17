@@ -6,12 +6,13 @@
   ******************************************************************************
 **/
 /* USER CODE END Header */
-#pragma once
+#include <Arduino.h>
 #include "wireless/wifi_svc.h"
 #include "freertos/FreeRTOS.h"
 #include "globals/rtos.h"
 #include <ESPping.h>
 #include "config.h"
+#include "wireless/ntp.h"
 
 bool WIFI_CONNECTED = false; // Global variable to track WiFi connection status
 bool INTERNET_CONNECTED = false; // Global variable to track internet connectivity status
@@ -51,6 +52,16 @@ void xTask_WIFI_SVC(void *pv) {
                 INTERNET_CONNECTED = true; // Update global internet connectivity status
                 xSemaphoreGive(xMutex);
             }
+
+            xTaskNotifyGive(tTaskHandle_WIFI_NTP); // Notify the NTP synchronization task to update time
+            #ifdef CONFIG_SERIAL_DEBUG
+                struct tm now;
+                Serial.println("Notifying WiFi NTP Task");
+                if (getLocalTime(&now)) {
+                    Serial.print("Current time: ");
+                    Serial.println(&now, "%A, %B %d %Y %H:%M:%S");
+                }
+            #endif
         }
         vTaskDelay(pdMS_TO_TICKS(10000)); // Check connection every 10 seconds
     }

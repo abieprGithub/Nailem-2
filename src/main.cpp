@@ -19,6 +19,7 @@
 #include "globals/rtos.h"
 #include "wireless/wifi_conn.h"
 #include "wireless/wifi_svc.h"
+#include "wireless/ntp.h"
 #include "config.h"
 /* USER CODE END Includes */
 
@@ -54,6 +55,7 @@ void setup() {
   Serial.println("Starting ESP32-S3 ...");
   xStart_WIFI_CONN();
   xStart_WIFI_SVC();
+  xStart_WIFI_NTP();
   /* USER CODE END Setup_Init */
 
   /* USER CODE BEGIN Setup */

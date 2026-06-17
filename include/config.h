@@ -58,7 +58,7 @@
 #define __PIN_UART_RX        TBA
 
 // WiFi credentials
-constexpr char* WIFI_CREDENTIALS[5][2] = {
+constexpr const char* WIFI_CREDENTIALS[][2] = {
   {"HUAWEI-2.4G-ReY2", "12345678"},
   {"abiepr-p1", "abcdefgh"},
   {"Techno_MTsLvl7_4G", "sifatmuhammad"},
@@ -87,3 +87,10 @@ constexpr uint8_t PING_IP[4] = {8, 8, 8, 8}; // IP address to ping for internet 
 constexpr uint8_t CONFIG_WIFI_SVC_PRIORITY = 1;
 constexpr uint16_t CONFIG_WIFI_SVC_STACK_SIZE = 4096;
 constexpr bool CONFIG_WIFI_SVC_USE_CORE_0 = true; // Run on core 0 for better performance
+
+// NTP config
+constexpr uint8_t CONFIG_NTP_PRIORITY = 1;
+constexpr uint16_t CONFIG_NTP_STACK_SIZE = 4096;
+constexpr bool CONFIG_NTP_USE_CORE_0 = true; // Run on core 0 for NTP
+constexpr uint8_t NUM_NTP_SYNC_ATTEMPTS = 5;
+constexpr uint16_t NTP_SYNC_TIMEOUT_MS = 1000; // Timeout for NTP
