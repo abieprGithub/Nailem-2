@@ -94,3 +94,15 @@ constexpr uint16_t CONFIG_NTP_STACK_SIZE = 4096;
 constexpr bool CONFIG_NTP_USE_CORE_0 = true; // Run on core 0 for NTP
 constexpr uint8_t NUM_NTP_SYNC_ATTEMPTS = 5;
 constexpr uint16_t NTP_SYNC_TIMEOUT_MS = 1000; // Timeout for NTP
+
+// LCD config
+constexpr uint8_t CONFIG_LCD_PRIORITY = 3;
+constexpr uint16_t CONFIG_LCD_STACK_SIZE = 8192;
+constexpr bool CONFIG_LCD_USE_CORE_0 = false; // Run on core 1 for LCD
+
+constexpr uint16_t LCD_REFRESH_RATE_MS = 1000; // Refresh rate in milliseconds (2 Hz)
+constexpr uint8_t LCD_I2C_ADDRESS = 0x27; // I2C address for the LCD
+constexpr uint8_t LCD_COLUMNS = 20; // Number of columns in the LCD
+constexpr uint8_t LCD_ROWS = 4 ; // Number of rows in the LCD
+
+constexpr uint8_t LCD_PRINTF_BUF_SIZE = 40; // Buffer size for LCD printf function

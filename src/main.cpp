@@ -20,6 +20,7 @@
 #include "wireless/wifi_conn.h"
 #include "wireless/wifi_svc.h"
 #include "wireless/ntp.h"
+#include "ui/lcd.h"
 #include "config.h"
 /* USER CODE END Includes */
 
@@ -56,6 +57,7 @@ void setup() {
   xStart_WIFI_CONN();
   xStart_WIFI_SVC();
   xStart_WIFI_NTP();
+  xStart_LCD();
   /* USER CODE END Setup_Init */
 
   /* USER CODE BEGIN Setup */
